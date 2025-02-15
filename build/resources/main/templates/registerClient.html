@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클라이언트 등록</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen flex items-center justify-center">
+        <div class="bg-white p-8 rounded-lg shadow-md w-96">
+            <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">클라이언트 등록</h2>
+            
+            <form th:action="@{/registerClient}" method="POST" class="space-y-4">
+                <div>
+                    <label for="clientName" class="block text-sm font-medium text-gray-700">클라이언트 이름</label>
+                    <input type="text" 
+                           id="clientName" 
+                           name="clientName" 
+                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                           placeholder="클라이언트 이름을 입력해주세요"
+                           required>
+                </div>
+
+                <div>
+                    <label for="clientSecret" class="block text-sm font-medium text-gray-700">클라이언트 Secret</label>
+                    <input type="text"
+                           id="clientSecret"
+                           name="clientSecret"
+                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                           placeholder="클라이언트 Secret"
+                           required>
+                </div>
+
+                <div>
+                    <label for="redirectUris" class="block text-sm font-medium text-gray-700">리다이렉트 URI</label>
+                    <input type="text" 
+                           id="redirectUris" 
+                           name="redirectUris" 
+                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                           placeholder="리다이렉트 URI를 입력해주세요"
+                           required>
+                </div>
+
+                <div>
+                    <label for="postLogoutRedirectUris" class="block text-sm font-medium text-gray-700">로그아웃 리다이렉트 URI</label>
+                    <input type="text" 
+                           id="postLogoutRedirectUris"
+                           name="postLogoutRedirectUris" 
+                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                           placeholder="로그아웃 리다이렉트 URI를 입력해주세요"
+                           required>
+                </div>
+
+                <div>
+                    <label for="scopes" class="block text-sm font-medium text-gray-700">스코프</label>
+                    <input type="text" 
+                           id="scopes" 
+                           name="scopes" 
+                           class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                           placeholder="스코프를 입력해주세요"
+                           required>
+                </div>
+
+                <button type="submit"
+                        class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    등록하기
+                </button>
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>
